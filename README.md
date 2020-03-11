@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+# Ramp Up - Frontend
+
+## Requirements:
+https://docs.google.com/document/d/1_J6WgYsq5m3zeycR0o4aPE97599SCvYXyfrw2JjoDkY/edit 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -67,14 +71,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-# Ramp Up - Frontend
 
-## Requirements:
-https://docs.google.com/document/d/1_J6WgYsq5m3zeycR0o4aPE97599SCvYXyfrw2JjoDkY/edit 
 
-## How to run the project:
-<ul>
-  <li>npm start</li>
-</ul>
->>>>>>> 2326fe4f7b18fb1e4cdec725d2f709d3e6c60c38
+
