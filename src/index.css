@@ -1,27 +1,11 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/*
+  https://willianjusten.com.br/organizando-seu-css-com-itcss/
+  We will be using ITCSS architecture to organize our css styles
+*/
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
-}
+/* @import "./styles/settings";
+@import "./styles/tools";
+@import "./styles/generic";
+@import "./styles/base/.";
+@import "./styles/objects"; */
+@import "./styles/components/index.css";

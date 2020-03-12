@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import Header from './shared/components/Header/Header.js';
+import Routes from './router/index';
 
 const App = () => (
   <div className="App">
-    <h1>React</h1>
+    <Header />
+    <Routes />
   </div>
 )
 
