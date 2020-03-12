@@ -6,7 +6,7 @@ const Header = () => (
     <div className="navbar">
         <a className="active" href="/"><i className="fa fa-fw fa-home"></i> Products </a>
         <a href="/cart"><i className="fa fa-fw fa-shopping-cart"></i> Cart</a>
-        <a href="/purchases"><i className="fa fa-fw fa-shopping-bag"></i> Purchases</a>
+        <a href="/purchases"><i className="fa fa-fw fa-shopping-bag"></i> Orders</a>
     </div>
 );
 

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../core/services/api.js';
 import './Products.css';
+// import { useDispatch } from 'react-redux';
 
 export default function Products() {
 
     const [products, setProducts] = useState([]);
+    // const dispatch = useDispatch();
 
     useEffect(async () => {
         const response = await fetch(`${api}/products`);
@@ -15,6 +17,7 @@ export default function Products() {
 
     useEffect(() => {
         const cartProducts = products.filter(product => product.addedToCart);
+        // dispatch(cartProducts);
     },[products]);
 
     function addToCart(id) {
