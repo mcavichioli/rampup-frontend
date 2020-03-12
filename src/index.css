@@ -3,9 +3,9 @@
   We will be using ITCSS architecture to organize our css styles
 */
 
-/* @import "./styles/settings";
-@import "./styles/tools";
-@import "./styles/generic";
-@import "./styles/base/.";
-@import "./styles/objects"; */
+@import "./styles/settings/index.css";
+@import "./styles/tools/index.css";
+@import "./styles/generic/index.css";
+@import "./styles/base/index.css";
+@import "./styles/objects/index.css";
 @import "./styles/components/index.css";
