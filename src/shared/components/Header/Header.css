@@ -9,3 +9,31 @@ header#main-header {
   justify-content: center;
   align-items: center;
 }
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #20b2aa;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+.active {
+  background-color: #555;
+}

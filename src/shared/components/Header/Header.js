@@ -3,7 +3,11 @@ import './Header.css';
 
 // Stateless component: criar componentes em react com apenas funções, ao invés de class
 const Header = () => (
-    <header id="main-header">E-Commerce</header>
+    <div className="navbar">
+        <a className="active" href="/"><i className="fa fa-fw fa-home"></i> Products </a>
+        <a href="/cart"><i className="fa fa-fw fa-shopping-cart"></i> Cart</a>
+        <a href="/purchases"><i className="fa fa-fw fa-shopping-bag"></i> Purchases</a>
+    </div>
 );
 
 export default Header;

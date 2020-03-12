@@ -10,11 +10,16 @@ export default function Products() {
         const response = await fetch(`${api}/products`);
         const data = await response.json();
         setProducts(data);
+        console.log(data);
     }, []);
+
+    useEffect(() => {
+        const cartProducts = products.filter(product => product.addedToCart);
+    },[products]);
 
     function addToCart(id) {
         const cart = products.map(product => {
-            return product._id === id ? { ...product, addToCart: !product.addToCart} : product;
+            return product._id === id ? { ...product, addedToCart: !product.addedToCart} : product;
         });
 
         setProducts(cart);
@@ -27,9 +32,12 @@ export default function Products() {
                     <strong>{product.name}
                     {product.stock < 1 && <span> (Unavailable) </span>}</strong>
                     <p>{product.description}</p>
+                    <strong>R$ {product.price}</strong>
                     <div className="actions">
-                        {product.addToCart && <span>(Added)</span>}
-                        <button disabled={product.stock < 1} onClick={() => addToCart(product._id)}>Add to Cart</button>
+                        <button disabled={product.stock < 1} onClick={() => addToCart(product._id)}>
+                            <i className="fa fa-fw fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        {product.addedToCart && <span>Added to cart!</span>}
                     </div>
                 </article>
             ))}
