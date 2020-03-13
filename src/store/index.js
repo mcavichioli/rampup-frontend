@@ -1,9 +1,18 @@
 import { createStore } from 'redux';
 
-function courses(state = [], action) {
-    return state;
+const INITIAL_STATE = {
+    data: [],
+};
+
+function products(state = INITIAL_STATE, action) {
+    switch(action.type) {
+        case 'ADD_PRODUCTS':
+            return { ...state, data: [...state.data, action]};
+        default:
+            return state;
+    }
 }
 
-const store = createStore(courses);
+const store = createStore(products);
 
 export default store;
