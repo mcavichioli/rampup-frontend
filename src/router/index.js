@@ -2,18 +2,15 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Products from '../pages/products/Products';
 import Cart from '../pages/cart/Cart';
-import store from '../store/index.js';
-import { Provider } from 'react-redux';
+import Header from '../shared/components/Header/Header';
 
 
 const Routes = () => (
     <BrowserRouter>
-        {/* Switch faz com que apenas uma página possa ser exibida a cada rota */}
+        <Header />
         <Switch>
-            <Provider store={store}>
-                <Route exact path="/" component={Products} />
-                <Route path="/cart" component={Cart} />
-            </Provider>
+            <Route exact path="/" component={Products} />
+            <Route path="/cart" component={Cart} />
         </Switch>
     </BrowserRouter>
 );

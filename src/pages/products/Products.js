@@ -8,20 +8,27 @@ export default function Products() {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
 
-    useEffect(async () => {
-        const response = await fetch(`${api}/products`);
-        const data = await response.json();
-        setProducts(data);
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(`${api}/products`);
+            const data = await response.json();
+            setProducts(data);
+        }
+        fetchData();
     }, []);
 
-    useEffect(() => {
-        const cartProducts = products.filter(product => product.addedToCart);
-        dispatch({type: 'ADD_PRODUCTS', cartProducts});
-    },[products]);
+    // useEffect(() => {
+    //     const cartProducts = products.filter(product => product.addedToCart);
+    // },[products]);
 
     function addToCart(id) {
         const cart = products.map(product => {
-            return product._id === id ? { ...product, addedToCart: !product.addedToCart} : product;
+            if (product._id === id){
+                dispatch({type: 'ADD_PRODUCTS', product});
+                return { ...product, addedToCart: !product.addedToCart};
+            }
+            else
+                return product
         });
 
         setProducts(cart);
