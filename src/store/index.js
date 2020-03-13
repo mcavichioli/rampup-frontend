@@ -7,12 +7,12 @@ const INITIAL_STATE = {
 };
 
 function products(state = INITIAL_STATE, action) {
-    let teste = {}
+    let newData = {};
     switch(action.type) {
         case 'ADD_PRODUCTS':
-            teste = { ...state, data: [...state.data, action.product]};
-            console.log(teste);
-            return teste;
+            newData = { ...state, data: [...state.data, action.product]};
+            // window.localStorage.setItem('cart-list', JSON.stringify(newData));
+            return newData;
         default:
             return state;
     }

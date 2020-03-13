@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 export default function Products() {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts, page = 1] = useState([]);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,6 +24,7 @@ export default function Products() {
     function addToCart(id) {
         const cart = products.map(product => {
             if (product._id === id){
+                product.stock--;
                 dispatch({type: 'ADD_PRODUCTS', product});
                 return { ...product, addedToCart: !product.addedToCart};
             }
