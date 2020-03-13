@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 export default function Products() {
 
-    const [products, setProducts, page = 1] = useState([]);
+    const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,10 +16,6 @@ export default function Products() {
         }
         fetchData();
     }, []);
-
-    // useEffect(() => {
-    //     const cartProducts = products.filter(product => product.addedToCart);
-    // },[products]);
 
     function addToCart(id) {
         const cart = products.map(product => {
