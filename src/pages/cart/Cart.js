@@ -11,8 +11,6 @@ export default function Cart() {
     }
 
     function removeProductfromCart(product) {
-        // console.log(products.filter(product => product === productToRemove));
-        // products.pop(products.filter(product => product === productToRemove));
         dispatch({type: 'REMOVE_PRODUCTS', product});
     }
 
@@ -21,7 +19,10 @@ export default function Cart() {
             {products.map(product => (
                 <article key={product._id}>
                     <strong>{product.name}</strong>
-                    <button className="btn" onClick={() => removeProductfromCart(product)}><i className="fas fa fa-fw fa-times"></i></button>
+                    <button className="btn" 
+                        onClick={() => removeProductfromCart(product)}>
+                            <i className="fas fa fa-fw fa-times"></i>
+                    </button>
                     <p>{product.description}</p>
                     <strong>R$ {product.price}</strong>
                 </article>
