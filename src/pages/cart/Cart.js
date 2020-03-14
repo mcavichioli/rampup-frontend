@@ -1,16 +1,19 @@
 import React from 'react';
 import './Cart.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Cart() {
     const products = useSelector(state => state.data);
+    const dispatch = useDispatch();
 
     function finishOrder() {
         console.log(products);
     }
 
     function removeProductfromCart(product) {
-        console.log(product);
+        // console.log(products.filter(product => product === productToRemove));
+        // products.pop(products.filter(product => product === productToRemove));
+        dispatch({type: 'REMOVE_PRODUCTS', product});
     }
 
     return(
