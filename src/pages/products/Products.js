@@ -6,16 +6,30 @@ import { useDispatch } from 'react-redux';
 export default function Products() {
 
     const [products, setProducts] = useState([]);
+    let [page, setPage] = useState(1);
+
     const dispatch = useDispatch();
 
+    async function fetchData() {
+        const response = await fetch(`${api}/products?limit=10&page=${page}`);
+        const data = await response.json();
+        setProducts(data);
+    }
+
     useEffect(() => {
-        async function fetchData() {
-            const response = await fetch(`${api}/products`);
-            const data = await response.json();
-            setProducts(data);
-        }
         fetchData();
     }, []);
+
+    function prevPage() {
+        if (page === 1) return;
+        setPage(page-=10);
+        fetchData();
+    } 
+
+    function nextPage() {
+        setPage(page+=10);
+        fetchData();
+    }
 
     function addToCart(id) {
         const cart = products.map(product => {
@@ -30,7 +44,7 @@ export default function Products() {
 
         setProducts(cart);
     }
-
+    
     return(
         <div className="product-list">
             {products.map(product => (
@@ -47,6 +61,10 @@ export default function Products() {
                     </div>
                 </article>
             ))}
+            <div className="actions">
+                <button disabled={page === 1} onClick={prevPage}>Previous</button>
+                <button onClick={nextPage}>Next</button>
+            </div>
         </div>
     );
 
