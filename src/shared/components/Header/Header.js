@@ -14,6 +14,7 @@ export default function Header() {
                 Cart <small>({products.length !== 0 ? products.length : '0'})</small>
             </Link>
             <Link to="/orders"><i className="fa fa-fw fa-shopping-bag"></i> Orders</Link>
+            <Link to="/login"><i className="fa fa-fw fa-sign-in"></i> Login</Link>
         </div>
     );
 }
